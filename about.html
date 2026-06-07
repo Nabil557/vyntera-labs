@@ -452,7 +452,7 @@
         </div>
 
         <!-- Kolom 2: Navigasi -->
-        <div>
+        <div class="footer-nav">
           <h4>Navigation</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
@@ -468,10 +468,17 @@
           <h4>Contact</h4>
           <ul class="footer-contact">
             <li>
-              <span>📍 Digital Hiseas No. 88, Jakarta Selatan, Indonesia</span>
+              <span class="footer-contact-icon">📍</span>
+              <span>Digital Hiseas No. 88, Jakarta Selatan, Indonesia</span>
             </li>
-            <li><span>✉️ hello@vyntera.labs</span></li>
-            <li><span>📞 +62 812-2456-7890</span></li>
+            <li>
+              <span class="footer-contact-icon">✉️</span>
+              <span>hello@vyntera.labs</span>
+            </li>
+            <li>
+              <span class="footer-contact-icon">📞</span>
+              <span>+62 812-2456-7890</span>
+            </li>
           </ul>
         </div>
       </div>
@@ -541,6 +548,37 @@
 
         counterObserver.observe(statsSection);
       }
+
+      // Fade IN saat halaman selesai load
+      window.addEventListener("load", () => {
+        document.body.classList.add("page-loaded");
+      });
+
+      // Fade OUT saat klik link ke halaman lain
+      document.querySelectorAll("a[href]").forEach((link) => {
+        const href = link.getAttribute("href");
+
+        // Hanya link internal (bukan #, mailto, http)
+        const isInternal =
+          href &&
+          !href.startsWith("http") &&
+          !href.startsWith("mailto") &&
+          !href.startsWith("tel") &&
+          !href.startsWith("#");
+
+        if (isInternal) {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            document.body.classList.remove("page-loaded");
+            document.body.classList.add("page-leaving");
+
+            // Tunggu animasi 400ms selesai baru pindah
+            setTimeout(() => {
+              window.location.href = href;
+            }, 400);
+          });
+        }
+      });
     </script>
   </body>
 </html>
