@@ -549,36 +549,36 @@
         counterObserver.observe(statsSection);
       }
 
-      // Fade IN saat halaman selesai load
-      window.addEventListener("load", () => {
-        document.body.classList.add("page-loaded");
-      });
+        // Fade IN saat halaman selesai load
+    window.addEventListener("load", () => {
+    document.body.classList.add("page-loaded");
+    });
 
-      // Fade OUT saat klik link ke halaman lain
-      document.querySelectorAll("a[href]").forEach((link) => {
-        const href = link.getAttribute("href");
+    // Fade OUT saat klik link ke halaman lain
+    document.querySelectorAll("a[href]").forEach((link) => {
+    const href = link.getAttribute("href");
 
-        // Hanya link internal (bukan #, mailto, http)
-        const isInternal =
-          href &&
-          !href.startsWith("http") &&
-          !href.startsWith("mailto") &&
-          !href.startsWith("tel") &&
-          !href.startsWith("#");
+    // Hanya link internal (bukan #, mailto, http)
+    const isInternal =
+        href &&
+        !href.startsWith("http") &&
+        !href.startsWith("mailto") &&
+        !href.startsWith("tel") &&
+        !href.startsWith("#");
 
-        if (isInternal) {
-          link.addEventListener("click", (e) => {
-            e.preventDefault();
-            document.body.classList.remove("page-loaded");
-            document.body.classList.add("page-leaving");
+    if (isInternal) {
+        link.addEventListener("click", (e) => {
+        e.preventDefault();
+        document.body.classList.remove("page-loaded");
+        document.body.classList.add("page-leaving");
 
-            // Tunggu animasi 400ms selesai baru pindah
-            setTimeout(() => {
-              window.location.href = href;
-            }, 400);
-          });
-        }
-      });
+        // Tunggu animasi 400ms selesai baru pindah
+        setTimeout(() => {
+            window.location.href = href;
+        }, 400);
+        });
+    }
+    });
     </script>
   </body>
 </html>
