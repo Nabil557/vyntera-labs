@@ -926,41 +926,43 @@
       footer {
         background: var(--bg);
         border-top: 1px solid var(--border);
-        padding: 4rem 5% 2rem;
+        padding: 5rem 5% 2rem;
       }
       .footer-grid {
         display: grid;
-        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-columns: minmax(240px, 1.8fr) repeat(2, minmax(180px, 1fr));
         gap: 3rem;
         margin-bottom: 3rem;
+        align-items: start;
       }
       .footer-brand p {
-        font-size: 0.875rem;
+        font-size: 0.94rem;
         color: var(--muted);
         margin: 0.75rem 0 1.25rem;
-        max-width: 280px;
-        line-height: 1.7;
+        max-width: 360px;
+        line-height: 1.8;
       }
       .footer-socials {
         display: flex;
-        gap: 0.6rem;
+        gap: 0.75rem;
       }
       .social-btn {
-        width: 36px;
-        height: 36px;
-        border: 1px solid var(--border);
-        border-radius: 8px;
+        width: 44px;
+        height: 44px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 14px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 0.9rem;
         color: var(--muted);
-        text-decoration: none;
+        cursor: pointer;
         transition: all 0.2s;
       }
       .social-btn:hover {
         border-color: rgba(0, 200, 255, 0.4);
         color: var(--accent);
+        background: rgba(0, 200, 255, 0.08);
       }
       footer h4 {
         font-family: var(--font-head);
@@ -991,6 +993,22 @@
       .footer-contact li span {
         font-size: 0.83rem;
         color: var(--muted);
+      }
+      .footer-contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        margin-bottom: 0.85rem;
+      }
+      .footer-contact-item svg {
+        flex-shrink: 0;
+        margin-top: 3px;
+        color: var(--muted);
+      }
+      .footer-contact-item span {
+        font-size: 0.85rem;
+        color: var(--muted);
+        line-height: 1.7;
       }
       .footer-bottom {
         border-top: 1px solid var(--border);

@@ -837,6 +837,7 @@
      font-size: 1rem;
      color: var(--muted);
      text-decoration: none;
+     cursor: pointer;
      transition: all 0.2s;
  }
 
@@ -919,6 +920,25 @@
  .footer-contact li span {
      font-size: 0.83rem;
      color: var(--muted);
+ }
+
+ .footer-contact-item {
+     display: flex;
+     align-items: flex-start;
+     gap: 0.75rem;
+     margin-bottom: 0.85rem;
+ }
+
+ .footer-contact-item svg {
+     flex-shrink: 0;
+     margin-top: 3px;
+     color: var(--muted);
+ }
+
+ .footer-contact-item span {
+     font-size: 0.85rem;
+     color: var(--muted);
+     line-height: 1.7;
  }
 
  /* Baris bawah footer (copyright) */
