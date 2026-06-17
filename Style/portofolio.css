@@ -661,3 +661,28 @@ body.page-leaving {
         align-items: flex-start;
     }
 }
+
+.follow-icons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.follow-icon-btn {
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.03);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.follow-icon-btn:hover {
+    border-color: rgba(0,200,255,0.4);
+    color: var(--accent);
+    background: rgba(0,200,255,0.08);
+}
