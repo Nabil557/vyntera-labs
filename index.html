@@ -72,12 +72,48 @@
       </div>
       <div class="hero-visual">
         <div class="hex-container">
-          <div class="orbit"></div>
-          <div class="hex-outer">
-            <div class="hex-mid">
-              <div class="hex-inner">⬡</div>
+          <div class="tech-orbit tech-orbit-inner" aria-label="Teknologi frontend">
+            <div class="tech-item tech-html" data-tech="HTML5">
+              <span class="tech-icon" data-tech="HTML5">
+                <img src="image/html.svg" alt="HTML5" />
+              </span>
+            </div>
+            <div class="tech-item tech-css" data-tech="CSS3">
+              <span class="tech-icon" data-tech="CSS3">
+                <img src="image/css.svg" alt="CSS3" />
+              </span>
+            </div>
+            <div class="tech-item tech-js" data-tech="JavaScript">
+              <span class="tech-icon" data-tech="JavaScript">
+                <img src="image/js.svg" alt="JavaScript" />
+              </span>
             </div>
           </div>
+          <div class="tech-orbit tech-orbit-outer" aria-label="Teknologi pendukung">
+            <div class="tech-item tech-react" data-tech="React">
+              <span class="tech-icon" data-tech="React">
+                <img src="image/react.svg" alt="React" />
+              </span>
+            </div>
+            <div class="tech-item tech-php" data-tech="PHP">
+              <span class="tech-icon" data-tech="PHP">
+                <img src="image/php.svg" alt="PHP" />
+              </span>
+            </div>
+            <div class="tech-item tech-mysql" data-tech="MySQL">
+              <span class="tech-icon" data-tech="MySQL">
+                <img src="image/mysql.svg" alt="MySQL" />
+              </span>
+            </div>
+          </div>
+          <div class="hex-outer">
+            <div class="hex-mid">
+              <div class="hex-inner">
+                <img src="image/logo.svg" alt="Vyntera Labs" />
+              </div>
+            </div>
+          </div>
+          <span class="hex-tooltip">Vyntera Labs</span>
         </div>
       </div>
     </section>
@@ -291,10 +327,11 @@
           <h3>Landing Page</h3>
           <div class="price-amount"><span class="amount">Rp 1,1 JT</span></div>
           <ul class="price-features">
-            <li>1 Halaman Responsif</li>
-            <li>Integrasi WA</li>
-            <li>Hosting 1 Tahun</li>
-            <li>SSL Sertifikat</li>
+            <li>1 Halaman</li>
+            <li>Integrasi WhatsApp, Media Sosia, Google Maps</li>
+            <li>Responsif(Mobile, Tab & Dekstop)</li>
+            <li>Full SEO</li>
+            <li>Hosting Berbayar & Domain (Costum)</li>
           </ul>
           <a href="#" class="btn-price btn-price-outline">Pilih Paket</a>
         </div>
@@ -330,6 +367,7 @@
             <li>Maps Online</li>
             <li>Buku Tamu Digital</li>
             <li>Transfer E-Wallet</li>
+            <li>Hosting Berbayar & Domain(Non Costum)</li>
           </ul>
           <a href="#" class="btn-price btn-price-outline">Pilih Paket</a>
         </div>
@@ -419,7 +457,7 @@
             <li><a href="faq.html">FAQ</a></li>
           </ul>
         </div>
-       <div>
+        <div>
       <h4>Kontak</h4>
       <div class="footer-contact-item">
       <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -457,37 +495,7 @@
         { threshold: 0.1 },
       );
       document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
-
-      // Fade IN saat halaman selesai load
-    window.addEventListener("load", () => {
-    document.body.classList.add("page-loaded");
-    });
-
-    // Fade OUT saat klik link ke halaman lain
-    document.querySelectorAll("a[href]").forEach((link) => {
-    const href = link.getAttribute("href");
-
-    // Hanya link internal (bukan #, mailto, http)
-    const isInternal =
-        href &&
-        !href.startsWith("http") &&
-        !href.startsWith("mailto") &&
-        !href.startsWith("tel") &&
-        !href.startsWith("#");
-
-    if (isInternal) {
-        link.addEventListener("click", (e) => {
-        e.preventDefault();
-        document.body.classList.remove("page-loaded");
-        document.body.classList.add("page-leaving");
-
-        // Tunggu animasi 400ms selesai baru pindah
-        setTimeout(() => {
-            window.location.href = href;
-        }, 400);
-        });
-    }
-    });
     </script>
+    <script src="script.js"></script>
   </body>
 </html>

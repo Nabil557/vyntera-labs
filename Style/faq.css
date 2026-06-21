@@ -569,22 +569,6 @@ footer ul li a:hover {
 }
 
 /* ═══════════════════════════════════════
-         PAGE TRANSITION
-      ════════════════════════════════════════ */
-body {
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-body.page-loaded {
-    opacity: 1;
-}
-
-body.page-leaving {
-    opacity: 0;
-}
-
-/* ═══════════════════════════════════════
          RESPONSIVE
       ════════════════════════════════════════ */
 @media (max-width: 900px) {
@@ -624,7 +608,7 @@ body.page-leaving {
         grid-template-columns: 1fr;
     }
 
-    .footer-grid > :first-child {
+    .footer-grid> :first-child {
         grid-column: 1 / -1;
     }
 
@@ -642,8 +626,8 @@ body.page-leaving {
 .follow-icon-btn {
     width: 44px;
     height: 44px;
-    border: 1px solid rgba(255,255,255,0.12);
-    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.03);
     border-radius: 14px;
     display: flex;
     align-items: center;
@@ -654,7 +638,7 @@ body.page-leaving {
 }
 
 .follow-icon-btn:hover {
-    border-color: rgba(0,200,255,0.4);
+    border-color: rgba(0, 200, 255, 0.4);
     color: var(--accent);
-    background: rgba(0,200,255,0.08);
+    background: rgba(0, 200, 255, 0.08);
 }

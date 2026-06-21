@@ -277,8 +277,8 @@
       <a class="nav-logo" href="#">Vyntera Labs</a>
       <p>Web development agency premium yang berfokus pada inovasi, desain modern, dan performa tinggi untuk bisnis di seluruh Indonesia.</p>
       <div class="footer-socials">
-       <div class="follow-icons">
-         <a
+      <div class="follow-icons">
+        <a
   class="follow-icon-btn"
   href="https://www.instagram.com/vynteralabs?igsh=c3JsMW55Ymhma3Zh"
   target="_blank"
@@ -358,9 +358,6 @@
 </footer>
 
 <script>
-  /* Page transition */
-  window.addEventListener('load', () => document.body.classList.add('page-loaded'));
-
   /* Scroll animation */
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
@@ -408,7 +405,6 @@
 
       if (response.ok && data && (data.success === true || data.success === 'true')) {
         showStatus('Pesan berhasil terkirim! Tim kami akan segera menghubungi Anda.', 'success');
-        contactForm.reset();
         setLoading(false);
         return;
       }
@@ -422,6 +418,7 @@
     }
   });
 </script>
+<script src="script.js"></script>
 
 </body>
 </html>
