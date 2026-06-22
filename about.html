@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us - Vyntera Labs</title>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
     <!-- ═══════════════════════════════════════
         GOOGLE FONTS
         Font utama: Plus Jakarta Sans
@@ -120,16 +120,7 @@
              Setelah isi src, hapus 'display:none' pada tag img -->
         <div class="story-visual fade-up">
           <!-- Foto asli — isi src dan hapus display:none -->
-          <img src="images/story-photo.jpg" alt="Foto Tim Vyntera Labs" />
-
-          <!-- Placeholder (akan hilang otomatis saat foto dimuat) -->
-          <div class="img-placeholder">
-            <span>🖼️</span>
-            <p>Ganti dengan foto tim / kantor</p>
-            <p style="font-size: 0.75rem; opacity: 0.6">
-              Ukuran ideal: 800 × 600px
-            </p>
-          </div>
+          <img src="image/logo.svg" alt="Foto Tim Vyntera Labs" />
         </div>
       </div>
     </section>
@@ -176,36 +167,45 @@
     ════════════════════════════════════════ -->
     <section class="vision-section">
       <div class="vision-grid">
-        <!-- Card Visi -->
-        <div class="vision-card fade-up">
-          <div class="card-glow"></div>
-          <div class="vision-icon">👁️</div>
-          <h3>Visi Kami</h3>
-          <p>
-            Menjadi standar baru dalam pengembangan perangkat lunak modern, di
-            mana keunggulan teknis bertemu dampak nyata bagi bisnis global.
-          </p>
-        </div>
+       <!-- Card Visi -->
+<div class="vision-card fade-up">
+  <div class="card-glow"></div>
+  <div class="vision-icon">
+    <i class="ti ti-telescope" aria-hidden="true"></i>
+  </div>
+  <h3>Visi Kami</h3>
+  <p>
+    Menjadi standar baru dalam pengembangan perangkat lunak modern, di
+    mana keunggulan teknis bertemu dampak nyata bagi bisnis global.
+  </p>
+</div>
 
-        <!-- Card Misi -->
-        <div class="vision-card fade-up">
-          <div class="card-glow"></div>
-          <div class="vision-icon">🚀</div>
-          <h3>Misi Kami</h3>
-          <ul class="mission-list">
-            <li>Menghasilkan kode berkualitas tinggi yang mudah dipelihara.</li>
-            <li>
-              Memprioritaskan pengalaman pengguna dalam setiap baris logika.
-            </li>
-            <li>
-              Mendorong inovasi berkelanjutan melalui riset dan eksperimentasi.
-            </li>
-            <li>
-              Membangun kemitraan strategis yang transparan dan kolaboratif.
-            </li>
-          </ul>
-        </div>
-      </div>
+<!-- Card Misi -->
+<div class="vision-card fade-up">
+  <div class="card-glow"></div>
+  <div class="vision-icon">
+    <i class="ti ti-flag-2" aria-hidden="true"></i>
+  </div>
+  <h3>Misi Kami</h3>
+  <ul class="mission-list">
+    <li>
+      <i class="ti ti-code" aria-hidden="true"></i>
+      Menghasilkan kode berkualitas tinggi yang mudah dipelihara.
+    </li>
+    <li>
+      <i class="ti ti-users" aria-hidden="true"></i>
+      Memprioritaskan pengalaman pengguna dalam setiap baris logika.
+    </li>
+    <li>
+      <i class="ti ti-bulb" aria-hidden="true"></i>
+      Mendorong inovasi berkelanjutan melalui riset dan eksperimentasi.
+    </li>
+    <li>
+      <i class="ti ti-handshake" aria-hidden="true"></i>
+      Membangun kemitraan strategis yang transparan dan kolaboratif.
+    </li>
+  </ul>
+  </div>
     </section>
 
     <!-- ═══════════════════════════════════════
@@ -585,7 +585,37 @@
 
         counterObserver.observe(statsSection);
       }
+
+        // Fade IN saat halaman selesai load
+    window.addEventListener("load", () => {
+    document.body.classList.add("page-loaded");
+    });
+
+    // Fade OUT saat klik link ke halaman lain
+    document.querySelectorAll("a[href]").forEach((link) => {
+    const href = link.getAttribute("href");
+
+    // Hanya link internal (bukan #, mailto, http)
+    const isInternal =
+        href &&
+        !href.startsWith("http") &&
+        !href.startsWith("mailto") &&
+        !href.startsWith("tel") &&
+        !href.startsWith("#");
+
+    if (isInternal) {
+        link.addEventListener("click", (e) => {
+        e.preventDefault();
+        document.body.classList.remove("page-loaded");
+        document.body.classList.add("page-leaving");
+
+        // Tunggu animasi 400ms selesai baru pindah
+        setTimeout(() => {
+            window.location.href = href;
+        }, 400);
+        });
+    }
+    });
     </script>
-    <script src="script.js"></script>
   </body>
 </html>
